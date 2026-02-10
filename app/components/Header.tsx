@@ -19,17 +19,17 @@ export default function Header() {
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' 
-        : 'bg-transparent py-4'
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-transparent py-2'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <div className="w-full mx-auto p-4 px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className={`relative transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`}>
             <Image
               src="/images/logo-clinicabc.png"
               alt="Clínica B&C"
-              width={160}
+              width={60}
               height={48}
               className="h-full w-auto object-contain"
               priority

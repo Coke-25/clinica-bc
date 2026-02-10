@@ -65,7 +65,7 @@ export default function Hero() {
               { number: '5+', label: 'Especialidades' },
               { number: '10+', label: 'Años de experiencia' },
               { number: '1000+', label: 'Pacientes satisfechos' },
-              { number: '100%', label: 'Compromiso' },
+              { number: '100%', label: 'Implicación' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-extrabold text-[#0066c1] mb-2 drop-shadow-lg">{stat.number}</div>
