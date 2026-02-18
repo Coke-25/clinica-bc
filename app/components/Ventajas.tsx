@@ -37,7 +37,7 @@ export default function Ventajas() {
         </svg>
       ),
       title: 'Clínica Multidisciplinar',
-      description: 'Servicio integral de alta especialización en cada una de las áreas.',
+      description: 'Nuestra clínica multidisciplinar nos brinda la posibilidad de ofrecerle un servicio de alta especialización en cada una de las áreas.',
       color: 'bg-rose-500',
     },
   ];
@@ -65,10 +65,10 @@ export default function Ventajas() {
           {ventajas.map((ventaja, index) => (
             <div
               key={index}
-              className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100"
+              className="group bg-white p-5 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100"
             >
               {/* Icon */}
-              <div className={`inline-flex items-center justify-center w-18 h-18 rounded-2xl ${ventaja.color} text-white mb-8 shadow-lg`}>
+              <div className={`inline-flex items-center justify-center w-18 h-18 rounded-2xl ${ventaja.color} text-white mb-4 shadow-lg`}>
                 {ventaja.icon}
               </div>
               

@@ -3,6 +3,12 @@ import Image from 'next/image';
 export default function Equipo() {
   const equipo = [
     {
+      nombre: 'Borja Bueno Castillo',
+      cargo: 'PODÓLOGO',
+      imagen: '/images/podologo-borja-bueno-castillo.jpg',
+      especialidad: 'Especialista en biomecánica y podología deportiva',
+    },
+    {
       nombre: 'Paula Morón Rodríguez',
       cargo: 'PODÓLOGA',
       imagen: '/images/podologo-paula-moron-rodriguez.jpg',
@@ -19,12 +25,12 @@ export default function Equipo() {
       cargo: 'FISIOTERAPEUTA',
       imagen: '/images/podologo-manuel.jpg',
       especialidad: 'Especializado en fisioterapia manual',
-    },
+    }
   ];
 
   return (
     <section id="equipo" className="py-28 lg:py-36 bg-gray-50 relative">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 relative">
+      <div className="max-w-9xl mx-auto px-8 md:px-12 lg:px-16 relative">
         {/* Header */}
         <div className="text-center mb-20">
           <span className="inline-block bg-[#0066c1]/10 text-[#004d91] font-bold text-sm tracking-wider uppercase px-5 py-2 rounded-full mb-6">
@@ -41,7 +47,7 @@ export default function Equipo() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-12 max-w-7xl mx-auto">
           {equipo.map((miembro, index) => (
             <div
               key={index}
@@ -76,19 +82,6 @@ export default function Equipo() {
               </p>
             </div>
           ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center mt-20">
-          <a
-            href="#contacto"
-            className="group inline-flex items-center gap-3 bg-gray-900 hover:bg-[#0066c1] text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 hover:shadow-xl"
-          >
-            <span>Conoce a todo el equipo</span>
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>

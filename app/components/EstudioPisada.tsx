@@ -7,14 +7,7 @@ export default function EstudioPisada() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://clinicabc.es/wp-content/uploads/estudio-biomecanico-pisada-podologo-san-jose-rinconada-600x600.jpg"
-                alt="Estudio biomecánico de la pisada"
-                fill
-                className="object-cover"
-                unoptimized
-              />
+            <div style={{ backgroundImage: 'url("images/estudio-pisada-san-jose-rinconada.jpg")' }} className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center bg-cover bg-center">
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-[#0066c1] text-white px-8 py-6 rounded-2xl shadow-2xl">
@@ -34,7 +27,7 @@ export default function EstudioPisada() {
             </h2>
             <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-10">
               Mejore su calidad de vida y rendimiento deportivo con nuestro estudio biomecánico de la pisada. 
-              Conocerá si corre o camina de forma correcta y evitará futuras lesiones.
+              Conocerá si corre o camina de forma correcta y evitará futuras lesiones y problemas de salud.
             </p>
             
             {/* Features List */}

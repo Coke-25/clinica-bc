@@ -56,20 +56,6 @@ export default function Psiconutricion() {
                 unoptimized
               />
             </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-[#0066c1] flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-3xl font-extrabold text-gray-900">95%</div>
-                  <div className="text-gray-600 font-semibold">Satisfacción</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
