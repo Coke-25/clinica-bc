@@ -8,6 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navHeight = isScrolled ? 'h-[74px]' : 'h-[88px]';
+  const logoSize = isScrolled ? 'h-11 w-[86px]' : 'h-12 w-[94px]';
   const serviceDropdownLinks = [
     { href: '/servicios#podologia', label: 'PODOLOGÍA', featured: true },
     { href: '/servicios#podologia-preventiva', label: 'Podología preventiva' },
@@ -49,14 +50,14 @@ export default function Header() {
     }`}>
       <div className={`w-full mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-500 ${navHeight}`}>
         {/* Logo */}
-        <Link href="/" className="flex h-full items-center group">
-          <div className="relative h-[78%] transition-all duration-300">
+        <Link href="/" className="group grid h-full shrink-0 place-items-center leading-none">
+          <div className={`relative transition-all duration-500 ${logoSize}`}>
             <Image
               src="/images/logo.png"
               alt="Clínica B&C"
-              width={72}
-              height={58}
-              className="h-full w-auto object-contain"
+              fill
+              sizes="(min-width: 1024px) 94px, 86px"
+              className="object-contain"
               priority
             />
           </div>
