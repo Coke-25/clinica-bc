@@ -31,8 +31,9 @@ El repositorio ya incluye workflow en `.github/workflows/deploy-pages.yml`.
 
 1. Sube los cambios a la rama `main`.
 2. En GitHub, entra en `Settings > Pages`.
-3. En `Build and deployment`, selecciona `Source: GitHub Actions`.
-4. El workflow `Deploy to GitHub Pages` publicara automaticamente al hacer push en `main`.
+3. En `Build and deployment`, selecciona `Source: Deploy from a branch`.
+4. En `Branch`, selecciona `gh-pages` y carpeta `/(root)`.
+5. El workflow `Deploy to GitHub Pages` publicara automaticamente al hacer push en `main`.
 
 ## Notas de configuracion
 
