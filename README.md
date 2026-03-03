@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clinica B&C (Next.js)
 
-## Getting Started
+Proyecto web en Next.js (App Router) preparado para despliegue estatico en GitHub Pages.
 
-First, run the development server:
+## Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build estatico
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build:pages
+```
 
-## Learn More
+El sitio generado queda en `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+Para previsualizarlo localmente:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run preview:pages
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Despliegue en GitHub Pages
 
-## Deploy on Vercel
+El repositorio ya incluye workflow en `.github/workflows/deploy-pages.yml`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Sube los cambios a la rama `main`.
+2. En GitHub, entra en `Settings > Pages`.
+3. En `Build and deployment`, selecciona `Source: GitHub Actions`.
+4. El workflow `Deploy to GitHub Pages` publicara automaticamente al hacer push en `main`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notas de configuracion
+
+- `next.config.ts` usa `output: "export"` para generar sitio estatico.
+- Se configura `basePath` y `assetPrefix` automaticamente en GitHub Actions para repositorios tipo `usuario/repo`.
+- Si el repo es de tipo `usuario.github.io`, se publica en raiz sin subruta.
+- Se incluye `public/.nojekyll` para evitar problemas con rutas de `_next`.
