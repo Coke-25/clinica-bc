@@ -33,23 +33,13 @@ export default function Psiconutricion() {
                 </div>
               ))}
             </div>
-
-            <a
-              href="#contacto"
-              className="group inline-flex items-center gap-3 bg-[#0066c1] hover:bg-[#004d91] text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 hover:shadow-xl"
-            >
-              <span>Más información</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
           </div>
 
           {/* Image */}
           <div className="relative order-1 lg:order-2">
             <div className="relative aspect-square max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://clinicabc.es/wp-content/uploads/psiconutricion-tratamiento-dietas-obesidad-1-600x600.jpg"
+                src="images/psiconutricion-san-jose-rinconada.jpg"
                 alt="Asesoramiento Psiconutricional"
                 fill
                 className="object-cover"

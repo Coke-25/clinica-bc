@@ -8,6 +8,30 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navHeight = isScrolled ? 'h-[74px]' : 'h-[88px]';
+  const serviceDropdownLinks = [
+    { href: '/servicios#podologia', label: 'PODOLOGÍA', featured: true },
+    { href: '/servicios#podologia-preventiva', label: 'Podología preventiva' },
+    { href: '/servicios#cirugia-podologica', label: 'Cirugía podológica' },
+    { href: '/servicios#podologia-deportiva', label: 'Podología deportiva' },
+    { href: '/servicios#biomecanica-estudio-pisada', label: 'Biomecánica y estudio de la pisada' },
+    { href: '/servicios#pie-diabetico', label: 'Pie diabético' },
+    { href: '/servicios#podologia-infantil', label: 'Podología Infantil' },
+    { href: '/servicios#fisioterapia', label: 'FISIOTERAPIA', featured: true },
+    { href: '/servicios#fisioterapia-preventiva', label: 'Fisioterapia preventiva' },
+    { href: '/servicios#fisioterapia-asistencial', label: 'Fisioterapia asistencial' },
+    { href: '/servicios#nutricion-dietetica', label: 'NUTRICIÓN Y DIETÉTICA', featured: true },
+    { href: '/servicios#educacion-nutricional', label: 'Educación nutricional' },
+    { href: '/servicios#dietas-personalizadas', label: 'Dietas personalizadas' },
+    { href: '/servicios#alimentacion-equilibrada', label: 'Alimentación equilibrada' },
+    { href: '/servicios#dietas-perdida-peso', label: 'Dietas para pérdida de peso' },
+    { href: '/servicios#nutricion-deportiva', label: 'Nutrición deportiva' },
+    { href: '/servicios#situaciones-fisiologicas', label: 'Situaciones fisiológicas' },
+    { href: '/servicios#nutricion-embarazo', label: 'Nutrición en el embarazo' },
+    { href: '/servicios#intolerancias-alergias', label: 'Intolerancias y alergias' },
+    { href: '/servicios#patologias', label: 'Patologías' },
+    { href: '/servicios#asesoramiento-psiconutricional-detalle', label: 'Asesoramiento psiconutricional' },
+    { href: '/servicios#enfermeria', label: 'ENFERMERÍA', featured: true },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,9 +66,9 @@ export default function Header() {
         <nav className="hidden lg:flex h-full items-center gap-1">
           {[
             { href: '/', label: 'Inicio' },
-            { href: '#servicios', label: 'Servicios', hasDropdown: true },
-            { href: '#equipo', label: 'Nuestro Equipo' },
-            { href: '#contacto', label: 'Contacto' },
+            { href: '/servicios', label: 'Servicios', hasDropdown: true },
+            { href: '/#equipo', label: 'Nuestro Equipo' },
+            { href: '/#contacto', label: 'Contacto' },
           ].map((item) => (
             <div key={item.label} className="relative group">
               <Link 
@@ -63,15 +87,19 @@ export default function Header() {
                 )}
               </Link>
               {item.hasDropdown && (
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 overflow-hidden border border-gray-100">
+                <div className="absolute left-0 mt-2 w-80 max-h-[70vh] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 overflow-y-auto border border-gray-100">
                   <div className="py-3">
-                    {['Podología', 'Fisioterapia', 'Nutrición y Dietética', 'Psicología', 'Enfermería'].map((service) => (
+                    {serviceDropdownLinks.map((service) => (
                       <Link 
-                        key={service} 
-                        href={`#${service.toLowerCase()}`} 
-                        className="block px-6 py-3 text-gray-600 hover:bg-[#0066c1]/10 hover:text-[#0066c1] transition-colors font-medium"
+                        key={service.href}
+                        href={service.href}
+                        className={`block px-6 py-3 transition-colors ${
+                          service.featured
+                            ? 'text-[#0066c1] font-bold tracking-wide text-xs uppercase'
+                            : 'text-gray-600 hover:bg-[#0066c1]/10 hover:text-[#0066c1] font-medium'
+                        }`}
                       >
-                        {service}
+                        {service.label}
                       </Link>
                     ))}
                   </div>
@@ -80,7 +108,7 @@ export default function Header() {
             </div>
           ))}
           <Link 
-            href="#contacto" 
+            href="/#contacto" 
             className="ml-4 px-6 py-2.5 bg-[#0066c1] hover:bg-[#004d91] text-white rounded-full text-sm font-semibold uppercase tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#0066c1]/30 hover:-translate-y-0.5"
           >
             Pedir Cita
@@ -110,18 +138,23 @@ export default function Header() {
         isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         <nav className="max-w-7xl mx-auto px-6 py-6 space-y-2">
-          {['Inicio', 'Servicios', 'Nuestro Equipo', 'Contacto'].map((item) => (
+          {[
+            { label: 'Inicio', href: '/' },
+            { label: 'Servicios', href: '/servicios' },
+            { label: 'Nuestro Equipo', href: '/#equipo' },
+            { label: 'Contacto', href: '/#contacto' },
+          ].map((item) => (
             <Link 
-              key={item} 
-              href={item === 'Inicio' ? '/' : `#${item.toLowerCase().replace(' ', '-')}`}
+              key={item.label}
+              href={item.href}
               className="block px-4 py-3 text-gray-700 hover:text-[#0066c1] hover:bg-[#0066c1]/10 rounded-xl font-semibold transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
           <Link 
-            href="#contacto" 
+            href="/#contacto" 
             className="block px-4 py-3 bg-[#0066c1] text-white text-center rounded-xl font-semibold mt-4"
             onClick={() => setIsMenuOpen(false)}
           >
