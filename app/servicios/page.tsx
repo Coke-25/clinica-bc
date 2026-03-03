@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 type ExtraBlock = {
   title: string;
@@ -349,94 +351,91 @@ const sections: ServiceSection[] = [
 
 export default function ServiciosPage() {
   return (
-    <main className="bg-gray-50 min-h-screen pt-36 pb-24">
-      <section className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
-        <div className="rounded-3xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm mb-10">
-          <p className="text-sm font-bold tracking-wider text-[#0066c1] mb-2">SERVICIOS</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">Contenido agrupado</h1>
-          <p className="text-gray-700 leading-relaxed">
-            Esta página agrupa el contenido de los enlaces del desplegable de servicios de clinicabc.es.
-          </p>
-        </div>
+    <>
+      <Header/>
+      <main className="bg-gray-50 min-h-screen pt-36 pb-24">
+        <section className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
 
-        <div className="rounded-3xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Índice</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
-            {dropdownLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-xl px-4 py-3 text-gray-700 hover:text-[#0066c1] hover:bg-[#0066c1]/10 transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Índice</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+              {dropdownLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl px-4 py-3 text-gray-700 hover:text-[#0066c1] hover:bg-[#0066c1]/10 transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-8">
-          {sections.map((section) => (
-            <article
-              key={section.id}
-              id={section.id}
-              className="scroll-mt-32 rounded-3xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm"
-            >
-              <p className="text-sm font-bold tracking-wider text-[#0066c1] mb-2">{section.menuLabel}</p>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6">{section.sourceTitle}</h3>
+          <div className="space-y-8">
+            {sections.map((section) => (
+              <article
+                key={section.id}
+                id={section.id}
+                className="scroll-mt-32 rounded-3xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm"
+              >
+                <p className="text-sm font-bold tracking-wider text-[#0066c1] mb-2">{section.menuLabel}</p>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6">{section.sourceTitle}</h3>
 
-              <div className="space-y-3 text-gray-700 leading-relaxed">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-
-              {section.bullets && section.bullets.length > 0 && (
-                <ul className="mt-6 space-y-2 text-gray-700">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-3">
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0066c1]" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {section.extras && section.extras.length > 0 && (
-                <div className="mt-8 space-y-5">
-                  {section.extras.map((extra) => (
-                    <section key={extra.title} className="rounded-2xl bg-gray-50 p-6 border border-gray-200">
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">{extra.title}</h4>
-
-                      {extra.quote && (
-                        <blockquote className="border-l-4 border-[#0066c1] pl-4 italic text-gray-700 mb-3">{extra.quote}</blockquote>
-                      )}
-
-                      {extra.paragraphs && extra.paragraphs.length > 0 && (
-                        <div className="space-y-3 text-gray-700 mb-3">
-                          {extra.paragraphs.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
-                          ))}
-                        </div>
-                      )}
-
-                      {extra.bullets && extra.bullets.length > 0 && (
-                        <ul className="space-y-2 text-gray-700">
-                          {extra.bullets.map((bullet) => (
-                            <li key={bullet} className="flex items-start gap-3">
-                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0066c1]" />
-                              <span>{bullet}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </section>
+                <div className="space-y-3 text-gray-700 leading-relaxed">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
+
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="mt-6 space-y-2 text-gray-700">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-3">
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0066c1]" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.extras && section.extras.length > 0 && (
+                  <div className="mt-8 space-y-5">
+                    {section.extras.map((extra) => (
+                      <section key={extra.title} className="rounded-2xl bg-gray-50 p-6 border border-gray-200">
+                        <h4 className="text-xl font-bold text-gray-900 mb-3">{extra.title}</h4>
+
+                        {extra.quote && (
+                          <blockquote className="border-l-4 border-[#0066c1] pl-4 italic text-gray-700 mb-3">{extra.quote}</blockquote>
+                        )}
+
+                        {extra.paragraphs && extra.paragraphs.length > 0 && (
+                          <div className="space-y-3 text-gray-700 mb-3">
+                            {extra.paragraphs.map((paragraph) => (
+                              <p key={paragraph}>{paragraph}</p>
+                            ))}
+                          </div>
+                        )}
+
+                        {extra.bullets && extra.bullets.length > 0 && (
+                          <ul className="space-y-2 text-gray-700">
+                            {extra.bullets.map((bullet) => (
+                              <li key={bullet} className="flex items-start gap-3">
+                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#0066c1]" />
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </section>
+                    ))}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer/>
+    </>
   );
 }

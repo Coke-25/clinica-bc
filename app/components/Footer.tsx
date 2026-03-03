@@ -27,9 +27,9 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { label: 'Inicio', href: '/' },
-                { label: 'Servicios', href: '#servicios' },
-                { label: 'Nuestro Equipo', href: '#equipo' },
-                { label: 'Contacto', href: '#contacto' },
+                { label: 'Servicios', href: '/servicios' },
+                { label: 'Nuestro Equipo', href: '/#equipo' },
+                { label: 'Contacto', href: '/#contacto' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-gray-300 hover:text-[#0066c1] transition-colors flex items-center gap-3 text-base font-medium">
