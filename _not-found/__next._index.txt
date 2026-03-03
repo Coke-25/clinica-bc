@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[7121,[],""]
+3:I[4581,[],""]
+:HL["/clinica-bc/_next/static/css/365bb5ba650b4fba.css","style"]
+0:{"buildId":"JAwcfDb4wzKz9hiHfMx3k","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/clinica-bc/_next/static/css/365bb5ba650b4fba.css","precedence":"next"}]],["$","html",null,{"lang":"es","children":["$","body",null,{"className":"antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
