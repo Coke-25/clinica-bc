@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { withBasePath } from '../lib/basePath';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +54,7 @@ export default function Header() {
         <Link href="/" className="group grid h-full shrink-0 place-items-center leading-none">
           <div className={`relative transition-all duration-500 ${logoSize}`}>
             <Image
-              src="/images/logo.png"
+              src={withBasePath('/images/logo.png')}
               alt="Clínica B&C"
               fill
               sizes="(min-width: 1024px) 94px, 86px"
