@@ -1,29 +1,30 @@
 import Image from 'next/image';
+import { withBasePath } from '../lib/basePath';
 
 export default function Equipo() {
   const equipo = [
     {
       nombre: 'Borja Bueno Castillo',
       cargo: 'PODÓLOGO',
-      imagen: '/images/podologo-borja-bueno-castillo.jpg',
+      imagen: withBasePath('/images/podologo-borja-bueno-castillo.jpg'),
       especialidad: 'Especialista en biomecánica y podología deportiva',
     },
     {
       nombre: 'Paula Morón Rodríguez',
       cargo: 'PODÓLOGA',
-      imagen: '/images/podologo-paula-moron-rodriguez.jpg',
+      imagen: withBasePath('/images/podologo-paula-moron-rodriguez.jpg'),
       especialidad: 'Especialista en biomecánica y podología deportiva',
     },
     {
       nombre: 'Angélica Fernández Cano',
       cargo: 'DIETISTA-NUTRICIONISTA',
-      imagen: '/images/podologo-angelica.jpg',
+      imagen: withBasePath('/images/podologo-angelica.jpg'),
       especialidad: 'Experta en nutrición clínica y deportiva',
     },
     {
       nombre: 'Manuel Clapera Lazo',
       cargo: 'FISIOTERAPEUTA',
-      imagen: '/images/podologo-manuel.jpg',
+      imagen: withBasePath('/images/podologo-manuel.jpg'),
       especialidad: 'Especializado en fisioterapia manual',
     }
   ];

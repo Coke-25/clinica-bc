@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { withBasePath } from '../lib/basePath';
 
 export default function Hero() {
   return (
@@ -6,7 +7,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/clinica-hero2.jpg"
+          src={withBasePath('/images/clinica-hero2.jpg')}
           alt="Clínica B&C San José de la Rinconada"
           fill
           className="object-cover"

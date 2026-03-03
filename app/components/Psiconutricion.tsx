@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { withBasePath } from '../lib/basePath';
 
 export default function Psiconutricion() {
   return (
@@ -39,7 +40,7 @@ export default function Psiconutricion() {
           <div className="relative order-1 lg:order-2">
             <div className="relative aspect-square max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="images/psiconutricion-san-jose-rinconada.jpg"
+                src={withBasePath('/images/psiconutricion-san-jose-rinconada.jpg')}
                 alt="Asesoramiento Psiconutricional"
                 fill
                 className="object-cover"

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { withBasePath } from '../lib/basePath';
 
 export default function EstudioPisada() {
   return (
@@ -7,7 +7,10 @@ export default function EstudioPisada() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative">
-            <div style={{ backgroundImage: 'url("images/estudio-pisada-san-jose-rinconada.jpg")' }} className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center bg-cover bg-center">
+            <div
+              style={{ backgroundImage: `url("${withBasePath('/images/estudio-pisada-san-jose-rinconada.jpg')}")` }}
+              className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center bg-cover bg-center"
+            >
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-[#0066c1] text-white px-8 py-6 rounded-2xl shadow-2xl">
