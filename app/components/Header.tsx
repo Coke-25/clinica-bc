@@ -7,6 +7,7 @@ import Image from 'next/image';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navHeight = isScrolled ? 'h-[74px]' : 'h-[88px]';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +21,17 @@ export default function Header() {
     <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${
       isScrolled 
         ? 'bg-white/95 backdrop-blur-md shadow-lg'
-        : 'bg-transparent py-2'
+        : 'bg-transparent'
     }`}>
-      <div className="w-full mx-auto p-4 px-6 lg:px-8 flex items-center justify-between">
+      <div className={`w-full mx-auto px-6 lg:px-8 flex items-center justify-between transition-all duration-500 ${navHeight}`}>
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <div className={`relative transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`}>
+        <Link href="/" className="flex h-full items-center group">
+          <div className="relative h-[78%] transition-all duration-300">
             <Image
-              src="/images/logo-clinicabc.png"
+              src="/images/logo.png"
               alt="Clínica B&C"
-              width={60}
-              height={48}
+              width={72}
+              height={58}
               className="h-full w-auto object-contain"
               priority
             />
@@ -38,7 +39,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex h-full items-center gap-1">
           {[
             { href: '/', label: 'Inicio' },
             { href: '#servicios', label: 'Servicios', hasDropdown: true },
