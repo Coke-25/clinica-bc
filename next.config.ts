@@ -11,14 +11,7 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath || undefined,
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "clinicabc.es",
-        pathname: "/wp-content/uploads/**",
-      },
-    ],
+    unoptimized: true
   },
 };
 
