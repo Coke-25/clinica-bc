@@ -47,13 +47,19 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-8">Servicios</h4>
             <ul className="space-y-4">
-              {['Podología', 'Fisioterapia', 'Nutrición y Dietética', 'Psicología', 'Enfermería'].map((service) => (
-                <li key={service}>
-                  <Link href="#" className="text-gray-300 hover:text-[#0066c1] transition-colors flex items-center gap-3 text-base font-medium">
+              {[
+                { label: 'Podología', href: '/servicios#podologia' },
+                { label: 'Fisioterapia', href: '/servicios#fisioterapia' },
+                { label: 'Nutrición y Dietética', href: '/servicios#nutricion-dietetica' },
+                { label: 'Psicología', href: '/servicios#asesoramiento-psiconutricional-detalle' },
+                { label: 'Enfermería', href: '/servicios#enfermeria' },
+              ].map((service) => (
+                <li key={service.label}>
+                  <Link href={service.href} className="text-gray-300 hover:text-[#0066c1] transition-colors flex items-center gap-3 text-base font-medium">
                     <svg className="w-4 h-4 text-[#0066c1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                     </svg>
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}
