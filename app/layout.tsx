@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { withBasePath } from "./lib/basePath";
+import { withBasePath } from "./lib/basePath"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Clínica B&C | Podólogo, Fisioterapeuta y Nutricionista en San José de la Rinconada",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
       </body>
+      <GoogleAnalytics gaId="GTM-MF8TCLZ8" />
     </html>
   );
 }
